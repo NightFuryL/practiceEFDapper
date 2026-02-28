@@ -10,6 +10,7 @@ namespace practiceEFDapper
     {
         private readonly string _connectionString = @"Data Source=NIGHTFURY\LEVMSSQLSERVER;Initial Catalog=AcademyDB;Integrated Security=True; TrustServerCertificate=True";
         public DbSet<Student> Students { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
         public AppDbContext()
         {
