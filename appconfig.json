@@ -1,0 +1,5 @@
+{
+  "connectionStrings": {
+    "DefaultConnection": "Data Source=NIGHTFURY\\LEVMSSQLSERVER;Initial Catalog=AcademyDB;Integrated Security=True; TrustServerCertificate=True"
+  }
+}
