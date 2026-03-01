@@ -4,7 +4,7 @@ using System.Text;
 
 namespace practiceEFDapper.Entities
 {
-    public class Teacher
+    internal class Teacher
     {
         public int Id { get; set; }
 
@@ -13,5 +13,10 @@ namespace practiceEFDapper.Entities
         public int Age { get; set; }
 
         public decimal Salary { get; set; }
+        public List<Subject> Subjects { get; set; }
+        public override string ToString()
+        {
+            return $"{Id} {FullName} {Salary} {Subjects.Count}";
+        }
     }
 }

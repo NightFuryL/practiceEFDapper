@@ -1,7 +1,7 @@
 ﻿using practiceEFDapper.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using practiceEFDapper.Entities;
+using Microsoft.Extensions.Logging;
 
 
 namespace practiceEFDapper
@@ -11,6 +11,8 @@ namespace practiceEFDapper
         private readonly string _connectionString = @"Data Source=NIGHTFURY\LEVMSSQLSERVER;Initial Catalog=AcademyDB;Integrated Security=True; TrustServerCertificate=True";
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
 
         public AppDbContext()
         {
@@ -21,7 +23,9 @@ namespace practiceEFDapper
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer(_connectionString);
+            optionsBuilder.UseSqlServer(_connectionString).LogTo(Console.WriteLine, LogLevel.Information);
+
+
         }
     }
 }
