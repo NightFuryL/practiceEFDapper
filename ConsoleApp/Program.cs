@@ -1,7 +1,7 @@
 ﻿using LibraryEFDapper.Data;
 
 namespace practiceEFDapper;
-
+//
 class Program
 {
     static AppDbContext db = new AppDbContext();
